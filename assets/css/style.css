@@ -1,0 +1,26 @@
+/* Weather Dashboard Banner text sizing*/
+.h1 {
+    font-size: 60px;
+}
+/*Container for City & Weather Data */
+.container {
+    max-width: 1300px;
+}
+
+h2, h3, h4 {
+    padding-top: 10px;
+    font-weight: 500;
+}
+/* Current Weather*/
+#currentWeather {
+    border: solid 1px black;
+    border-radius: 0.3rem;
+    padding: 15px;
+}
+/* Last Search items */
+#lastSearch {
+    /* border: solid 1px black; */
+    margin-bottom: 15px;
+    max-height: 408px;
+    overflow: auto;
+}
