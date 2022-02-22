@@ -1,15 +1,21 @@
 $(document).ready(function () {
+  // setting terms for localStorage
+
   if (localStorage.getItem("Searchhistory")) {
     var searchHistory = JSON.parse(localStorage.getItem("Searchhistory"));
   } else {
     var searchHistory = [];
   }
 
+ // global variables
+
   var apiKey = "2c77fe7ff6a9a39fb2189af34c91631f";
   var today = moment();
   var date = today.format("dddd, MMMM Do, YYYY");
   var home = "index.html";
   var recentHistory = document.querySelector("#last-search");
+
+  // create click event for search bar
 
   $("#submitCity").click(function (event) {
     event.preventDefault();
@@ -18,6 +24,8 @@ $(document).ready(function () {
     storeSearchHistory(cityName);
     console.log(cityName);
   });
+
+  // function that creates search history
 
   var renderSearchHistory = function () {
     recentHistory.innerHTML = "";
@@ -33,8 +41,10 @@ $(document).ready(function () {
       //console.log(searchHistory[i])
     }
   };
+
+  // variable that stores history to localStorage
   var storeSearchHistory = function (search) {
-    if (searchHistory.length >= 5) {
+    if (searchHistory.length >= 6) {
       searchHistory.pop();
     }
     searchHistory.unshift(search);
@@ -43,6 +53,8 @@ $(document).ready(function () {
     renderSearchHistory();
   };
 
+
+  // function that grabs weather data and appends current weather
   function returnWeather(cityName) {
     if (cityName == "") {
       alert("Please enter a city or town!");
@@ -105,6 +117,8 @@ $(document).ready(function () {
       });
   }
 
+
+  // function that populates the five day forecast
   function fiveDay(data) {
     $("#forecast").empty();
 
@@ -125,18 +139,18 @@ $(document).ready(function () {
         .utc()
         .utcOffset(currentTimeZoneOffsetHours);
 
-      let newCard = $("<div>").attr("class", "col bg-primary");
-      let date = $("<p>").text(`${currentMoment.format("MMM Do YY")}`);
+      let card = $("<div>").attr("class", "col bg-primary");
+      let date = $("<p>").text(`${currentMoment.format("MMM Do YYYY")}`);
       let temp = $("<p>").text(`Temp: ${data.daily[i].temp.day}°F`);
       let wind = $("<p>").text(`Wind Speed: ${data.daily[i].wind_speed}MPH`);
       let humidity = $("<p>").text(`Humidity: ${data.daily[i].humidity}%`);
       let graphic = $("<img>").attr("src", icon);
-      newCard.append(date);
-      newCard.append(graphic);
-      newCard.append(temp);
-      newCard.append(wind);
-      newCard.append(humidity);
-      newCardContainerEl.append(newCard);
+      card.append(date);
+      card.append(graphic);
+      card.append(temp);
+      card.append(wind);
+      card.append(humidity);
+      newCardContainerEl.append(card);
     }
     $("#forecast").append(newCardContainerEl);
   }
