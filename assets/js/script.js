@@ -61,7 +61,7 @@ $(document).ready(function () {
       return;
     }
     var queryUrl =
-      "http://api.openweathermap.org/data/2.5/weather?q=" +
+      "https://api.openweathermap.org/data/2.5/weather?q=" +
       cityName +
       "&units=imperial&appid=" +
       apiKey;
@@ -73,7 +73,7 @@ $(document).ready(function () {
       })
       .then(function (data) {
         var icon =
-          "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png";
+          "https://openweathermap.org/img/w/" + data.weather[0].icon + ".png";
         $("#main").css("border", "2px solid black");
         $("#city-date").text(`${cityName} (${date})`);
         $("#icon").empty();
