@@ -44,7 +44,7 @@ $(document).ready(function () {
 
   // variable that stores history to localStorage
   var storeSearchHistory = function (search) {
-    if (searchHistory.length >= 6) {
+    if (searchHistory.length >= 5) {
       searchHistory.pop();
     }
     searchHistory.unshift(search);

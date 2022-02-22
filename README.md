@@ -1,7 +1,7 @@
 # Weather API App
 
 ## Purpose
-To provide the user with a quick way to get the current weather as well as an upcoming 5 day forecast.  The app also saves the last 6 searches.
+To provide the user with a quick way to get the current weather as well as an upcoming 5 day forecast.  The app also saves the last 5 searches.
 
 ## Built With
 * HTML 
