@@ -16,7 +16,7 @@
         <!-- City Search -->
         <div class="container-fluid">
         <div class="row">
-                <div class="col-md-3 searchColumn">
+                <div class="col-md-3 bg-light searchColumn">
                     <form>
                         <h4>Search for a city:</h4>
                         <div class="input-group">
@@ -26,8 +26,8 @@
                     </form>
                     <br>
                     <button type ="button" class="btn btn-info btn-lg btn-block" id="submitCity" type="submit">Search</button>
-                 <div id="lastSearch"></div>
-        </div>
+    </div>
+    
         <!-- Current Weather -->
         <div class="col-md-9" id="main">
             <div class="container">
@@ -39,10 +39,18 @@
         </div>
 
         <!-- 5 Day Forecast -->
-        <div class="container col-md-6">
-        <h3>5 Day Forecast:</h3>
-            <div class="cardRow" id="forecast"></div>
+        
+            <div class="col-md-3 bg-light searchColumn">
+        <div id="last-search">
+            <h4>Recent History</h4>
         </div>
+            </div>
+        <div class="container col-lg-9">
+        <h3>5 Day Forecast:</h3>
+            <div class="card" id="forecast"></div>
+        </div>
+
+        
     <!--JavaScript, Moment and JQuery-->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/skycons/1396634940/skycons.min.js"></script>
