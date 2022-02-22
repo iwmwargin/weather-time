@@ -17,10 +17,10 @@ To provide the user with a quick way to get the current weather as well as an up
 
 ## Images of Website
 Weather Dashboard Blank
-<img src="">
+<img src="https://github.com/iwmwargin/weather-time/blob/main/assets/images/Blank.png">
 
 Weather Dashboard with All Information Displayed
-<img src="">
+<img src="https://github.com/iwmwargin/weather-time/blob/main/assets/images/Filled.png">
 
 ### Contribution
 Made by Eric Wargin
