@@ -97,18 +97,18 @@ $(document).ready(function () {
           })
           .then(function (data) {
             $("#currentWeather").append(
-              `<li>UV Index: ${data.current.uvi}</li>`
+              `<li>UV Index: <button id="btnUvi">${data.current.uvi}</button></li>`
             );
 
-            //   if (data.current.uvi < 4) {
-            //    $("#currentWeather").attr("class", "badge badge-success");
-            // }
-            // else if (data.current.uvi < 8) {
-            //     UVIndex.setAttribute("class", "badge badge-warning");
-            // }
-            // else {
-            //     UVIndex.setAttribute("class", "badge badge-danger");
-            // }
+              if (data.current.uvi < 4) {
+               $("#btnUvi").attr("class", "badge badge-success");
+            }
+            else if (data.current.uvi < 8) {
+                UVIndex.setAttribute("class", "badge badge-warning");
+            }
+            else {
+                UVIndex.setAttribute("class", "badge badge-danger");
+            }
             console.log(data.current.uvi);
 
             fiveDay(data);
@@ -124,7 +124,8 @@ $(document).ready(function () {
 
     let newCardContainerEl = $("<div>")
       .attr("id", "cardContainer")
-      .attr("class", "row");
+      .attr("class", "row")
+      .attr("style", "background-color: rgb(227, 233, 233)");
 
     for (i = 1; i <= 5; i++) {
       let icon =
@@ -139,7 +140,7 @@ $(document).ready(function () {
         .utc()
         .utcOffset(currentTimeZoneOffsetHours);
 
-      let card = $("<div>").attr("class", "col bg-primary");
+      let card = $("<div>").attr("class", "col bg-primary m-2");
       let date = $("<p>").text(`${currentMoment.format("MMM Do YYYY")}`);
       let temp = $("<p>").text(`Temp: ${data.daily[i].temp.day}°F`);
       let wind = $("<p>").text(`Wind Speed: ${data.daily[i].wind_speed}MPH`);
