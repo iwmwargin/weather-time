@@ -104,10 +104,10 @@ $(document).ready(function () {
                $("#btnUvi").attr("class", "badge badge-success");
             }
             else if (data.current.uvi < 8) {
-                UVIndex.setAttribute("class", "badge badge-warning");
+              $("#btnUvi").attr("class", "badge badge-warning");
             }
             else {
-                UVIndex.setAttribute("class", "badge badge-danger");
+              $("#btnUvi").attr("class", "badge badge-danger");
             }
             console.log(data.current.uvi);
 
